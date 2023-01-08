@@ -1,0 +1,9 @@
+---
+deployment:
+    tasks:
+        - export DEPLOYPATH=/home/ikittylife/
+        - /bin/cp -R ikitty $DEPLOYPATH
+        - /bin/cd $DEPLOYPATH
+        - pip install pipenv
+        - pipenv shell
+        - gunicorn "app:create_app()"
