@@ -1,11 +1,13 @@
 import os
-from threading import Thread
+import threading
 from flask import (
-    Flask, redirect,
-    render_template, 
-    request, url_for
+    Flask, request,
+    render_template,
 )
 from flask_mail import (Mail, Message )
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def create_app(test_config=None):
     mail = Mail()
@@ -63,9 +65,8 @@ def create_app(test_config=None):
             if name is not None and email is not None and subject is not None and content is not None:
                 msg = Message(subject, sender=sender, recipients=recipient)
                 msg.body=message
-                thr = Thread(target=send_async_email, daemon=True, args=[app, msg])
+                thr = threading.Thread(target=send_async_email, daemon=True, args=[app, msg])
                 thr.start()
-            return redirect(request.url + '#hero')
 
         return render_template('index.html')
 
