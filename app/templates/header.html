@@ -1,0 +1,53 @@
+<div>
+  <section id="topbar" class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:info@mdfa.org">info@moyodfa.org</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+256 782 624 713/+256 778 559 089</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section><!-- End Top Bar -->
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="{{ url_for('index') }}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="static/img/MDFA-LOGO.png" alt="">
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('index') }}#about">About us</a></li>
+          <li><a href="{{ url_for('index') }}#services">Services</a></li>
+          <li><a href="{{ url_for('index') }}#team">Our Team</a></li>
+          <li class="dropdown"><a href="#"><span>Media</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{{ url_for('news') }}">News & Events</a></li>
+              <li><a href="{{ url_for('reports') }}">Reports & Articles</a></li>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Advert</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{{ url_for('vacancy') }}">Vacancies</a></li>
+              <li><a href="{{ url_for('tender') }}">Tenders</a></li>
+              </li>
+            </ul>
+          </li>
+          <li><a href="{{ url_for('index') }}#contact">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+</div>

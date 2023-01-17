@@ -49,6 +49,22 @@ def create_app(test_config=None):
     @app.route('/', methods=('GET', 'POST'))
     def index():
         return render_template('index.html')
+    
+    @app.route('/news', methods=('GET', 'POST'))
+    def news():
+        return render_template('news.html')
+      
+    @app.route('/vacancy', methods=('GET', 'POST'))
+    def vacancy():
+        return render_template('vacancy.html')
+      
+    @app.route('/tender', methods=('GET', 'POST'))
+    def tender():
+        return render_template('vacancy.html')
+
+    @app.route('/reports', methods=('GET', 'POST'))
+    def reports():
+        return render_template('reports.html')
 
     @app.route('/send_email', methods=('GET', 'POST'))
     def send_email():
